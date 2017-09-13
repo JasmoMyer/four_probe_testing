@@ -18,6 +18,7 @@ require 'bundler'
 Bundler.setup(:default, :test)
 
 require_relative '../lib/ant_nest_app'
+require_relative '../lib/middleware/topsoil'
 
 #================================================================# 
 #               INTEGRATION TEST CONFIGURATION:

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../spec_helper'
+require 'spec_helper'
 
 describe 'Visiting the index page', type: :feature do
   before(:each) do
