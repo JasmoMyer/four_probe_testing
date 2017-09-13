@@ -34,14 +34,13 @@ require 'rack/test'
 # POLTERGEIST & PHANTOMJS:
 # - driver and headless browser for visitng pages
 #
-# WEBMOCK & VCR:
+# VCR:
 # - intercept requests-to, and record responses-from any services 
 #   we're dependent on, for mocking purposes
 #================================================================#
 
 require 'capybara/rspec'
 require 'capybara/poltergeist'
-require 'webmock/rspec'
 require 'vcr'
 
 # CAPYBARA, POLTERGEIST & PHANTOMJS
@@ -71,22 +70,10 @@ Capybara.configure do |config|
   config.app_host          = 'http://localhost:7000'
 end
 
-# WEBMOCK
-WebMock.disable_net_connect!(allow_localhost: true)
-
-RSpec.configure do |config|
-  config.after(:each) do
-    WebMock.reset!
-  end
-  config.after(:suite) do
-    WebMock.disable!
-  end
-end
-
 # VCR
 VCR.configure do |config|
   config.cassette_library_dir = File.join(__dir__, 'support/fixtures/vcr_cassettes')
-  config.hook_into                               :webmock
+  config.hook_into                               :faraday
   config.ignore_localhost                        = true
   config.allow_http_connections_when_no_cassette = false
 end

@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org' do
   gem 'sinatra'
+  gem 'faraday'
 
   group :development, :test do
     gem 'rspec'
