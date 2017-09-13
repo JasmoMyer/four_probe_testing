@@ -2,7 +2,7 @@
 
 require 'faraday'
 
-class AntRepository
+class AntNest
   def get
     Faraday.get('https://en.wikipedia.org/w/api.php', params).body
   end

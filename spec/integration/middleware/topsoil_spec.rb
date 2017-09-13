@@ -12,12 +12,12 @@ describe "AntNestApp's behaviour given Topsoil", type: :integration do
     end
   end
   
-  let(:ant_repo) { double('AntRepository', get: 'Mock ant data') }
+  let(:ant_nest) { double('AntNest', get: 'Mock ant data') }
   let(:env)      { {} }
   let(:params)   { {} }
 
   before(:each) do
-    allow(AntRepository).to receive(:new).and_return(ant_repo)
+    allow(AntNest).to receive(:new).and_return(ant_nest)
 
     VCR.use_cassette(:wikipedia_response) do
       get '/', params, env 
@@ -25,16 +25,16 @@ describe "AntNestApp's behaviour given Topsoil", type: :integration do
   end
 
   context 'when Topsoil is fine' do
-    specify 'AntNestApp DOES call the AntRepository' do
-      expect(ant_repo).to have_received(:get)
+    specify 'AntNestApp DOES call the AntNest' do
+      expect(ant_nest).to have_received(:get)
     end
   end
 
   context 'when Topsoil is too dry' do
     let(:env) { { 'HTTP_USER_AGENT' => 'Parched browser (super-dry 3000)' } }
     
-    specify 'AntNestApp does NOT call the AntRepository' do
-      expect(ant_repo).not_to have_received(:get)
+    specify 'AntNestApp does NOT call the AntNest' do
+      expect(ant_nest).not_to have_received(:get)
     end
   end
 end

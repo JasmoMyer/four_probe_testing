@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-describe AntRepository do
-  describe '#ants' do
+describe AntNest do
+  describe '#get' do
   	let(:faraday_response) { double('Faraday::Response', body: ant_data) }
   	let(:ant_data)         { 'Mock ant data' }
 
