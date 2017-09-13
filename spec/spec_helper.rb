@@ -17,8 +17,8 @@ ENV['RACK_ENV'] = 'test'
 require 'bundler'
 Bundler.setup(:default, :test)
 
-require_relative '../lib/ant_nest_app'
 require_relative '../lib/middleware/topsoil'
+require_relative '../lib/ant_nest_entrypoint'
 
 #================================================================# 
 #               INTEGRATION TEST CONFIGURATION:
@@ -62,7 +62,7 @@ end
 
 Capybara.configure do |config|
   config.app = Rack::Builder.new do
-    run AntNestApp
+    run AntNestEntrypoint
   end
   config.server_port       = 7000
   config.run_server        = true

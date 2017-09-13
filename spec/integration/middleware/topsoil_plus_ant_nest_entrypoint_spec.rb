@@ -2,13 +2,13 @@
 
 require 'spec_helper'
 
-describe "AntNestApp's behaviour given Topsoil", type: :integration do
+describe "AntNestEntrypoint's behaviour given Topsoil", type: :integration do
   include Rack::Test::Methods
 
   let(:app) do
     Rack::Builder.new do
       use Topsoil
-      run AntNestApp
+      run AntNestEntrypoint
     end
   end
   
@@ -25,7 +25,7 @@ describe "AntNestApp's behaviour given Topsoil", type: :integration do
   end
 
   context 'when Topsoil is fine' do
-    specify 'AntNestApp DOES call the AntNest' do
+    specify 'AntNestEntrypoint DOES call the AntNest' do
       expect(ant_nest).to have_received(:get)
     end
   end
@@ -33,7 +33,7 @@ describe "AntNestApp's behaviour given Topsoil", type: :integration do
   context 'when Topsoil is too dry' do
     let(:env) { { 'HTTP_USER_AGENT' => 'Parched browser (super-dry 3000)' } }
     
-    specify 'AntNestApp does NOT call the AntNest' do
+    specify 'AntNestEntrypoint does NOT call the AntNest' do
       expect(ant_nest).not_to have_received(:get)
     end
   end
