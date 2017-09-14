@@ -12,5 +12,6 @@ source 'https://rubygems.org' do
     gem 'phantomjs'
     gem 'webmock'
     gem 'vcr'
+    gem 'colorize'
   end
 end

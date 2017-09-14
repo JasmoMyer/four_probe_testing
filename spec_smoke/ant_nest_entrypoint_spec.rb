@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require_relative 'spec_helper'
 
-feature 'Visiting the index page' do
+feature 'Visiting the index page in production' do
   background(:each) do
-    VCR.use_cassette(:wikipedia_response) do
-      visit '/'
-    end
+    visit '/'
   end
 
   scenario 'the page load successfully' do
