@@ -4,8 +4,8 @@ require 'spec_helper'
 
 describe AntNest do
   describe '#get' do
-  	let(:faraday_response) { double('Faraday::Response', body: ant_data) }
-  	let(:ant_data)         { 'Mock ant data' }
+    let(:faraday_response) { double('Faraday::Response', body: ant_data) }
+    let(:ant_data)         { 'Mock ant data' }
 
     before do
       allow(Faraday).to receive(:get).and_return(faraday_response)

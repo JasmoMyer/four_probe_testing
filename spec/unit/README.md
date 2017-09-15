@@ -3,13 +3,13 @@
 
 The tests in this location are Unit tests. This means that they:
 
-* **TEST:** the expected behaviour of a 'unit' of code (e.g. a method)
+* **TEST:** the expected behaviour of a 'unit' of code (for example, a method)
 
-* **CONTEXT:** are driven from the context of the class / module under test
+* **ARE DRIVEN FROM:** the parent context of the unit-under-test (for example, the class / module that houses the method-under-test)
 
-* **PASS-THROUGH:** a single class / module of the app
+* **PASS THROUGH:** a single component of the app (for example, the class / module that houses the method-under-test)
 
-* **MOCK:** all dependencies (e.g. any resources that the unit under test depends on)
+* **MOCK:** all dependencies (i.e. any resource that the method-under-test depends on)
 
 ## How to run
 
