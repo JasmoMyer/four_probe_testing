@@ -7,7 +7,7 @@ feature 'Visiting the index page in production' do
     visit '/'
   end
 
-  scenario 'the page load successfully' do
+  scenario 'the page loads successfully' do
     expect(page.status_code).to eq(200)
   end
 

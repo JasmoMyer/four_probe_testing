@@ -9,7 +9,7 @@ The tests in this location are Feature tests. This means that they:
 
 * **PASS-THROUGH:** all layers of the application
 
-* **MOCK:** all *external* dependencies (e.g. any external services that the feature under test depends upon)
+* **MOCK:** all *external* dependencies (i.e. any external services that the feature-under-test depends upon). However no components *within* the app are mocked.
 
 ## How to run
 

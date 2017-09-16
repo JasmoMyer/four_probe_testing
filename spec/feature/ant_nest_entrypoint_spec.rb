@@ -9,7 +9,7 @@ feature 'Visiting the index page' do
     end
   end
 
-  scenario 'the page load successfully' do
+  scenario 'the page loads successfully' do
     expect(page.status_code).to eq(200)
   end
 
