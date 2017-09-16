@@ -1,7 +1,7 @@
 
 # Welcome
 
-This repo accompanies the following [blog post]() on [cruft.io]().
+This repo accompanies the following [post](http://cruft.io/posts/four-probe-testing) on [cruft.io](http://cruft.io).
 
 We'll use it to demo some approaches to testing that have worked well for us. 
 
